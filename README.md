@@ -25,6 +25,7 @@ Example
 %load_ext cppmagic
 ```
 
+<br>
 
 - Example 1: Get stdout
 
@@ -48,7 +49,7 @@ int main(void) {
 - Example 2: Time execution (compilation time is excluded)
 
 ```
-%%cpp
+%%cpp -t
 
 #include <stdio.h>
 
