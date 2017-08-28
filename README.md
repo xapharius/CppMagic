@@ -6,7 +6,8 @@ Ipython cell magic to run and time C++ code.
 
 Usage
 --------
-Use %%cpp at the beginning of the cell and write your C++ code.   
+Load extension using %load_ext cppmagic
+Use %%cpp at the beginning of the cell and write your C++ code. Execute to get results or compilation errors.   
 Use %%cpp -t to get a timeit result.
 
 <br><br>
