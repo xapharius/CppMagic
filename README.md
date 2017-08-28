@@ -21,6 +21,10 @@ git clone then in folder run python setup.py install
 Example
 ------------
 **example.ipynb**
+```
+%load_ext cppmagic
+```
+
 
 - Example 1: Get stdout
 
