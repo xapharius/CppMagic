@@ -1,6 +1,6 @@
 CppMagic
 =======
-Ipython cell magic to run and time C++ code.
+Ipython cell magic for jupyter notebooks to run and time C++ code.
 
 <br><br>
 
@@ -12,13 +12,13 @@ Use %%cpp -t to get a timeit result.
 
 <br><br>
 
-Install
+Installation
 --------
-git clone then in folder run python setup.py install
+pip install git+git://github.com/xapharius/cppmagic.git
 
 <br><br>
 
-Example
+Examples
 ------------
 **example.ipynb**
 ```
