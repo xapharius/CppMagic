@@ -91,7 +91,6 @@ TODO:
 --------
 - test on windows
 - test on python 2
-- add compiler flags
 - add timeit params
 
 
