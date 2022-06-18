@@ -13,6 +13,7 @@ def get_argparser():
     parser = argparse.ArgumentParser(description='CppMagic params')
     parser.add_argument("-t", "--timeit", action='store_true',
                         help='flag to return timeit result instead of stdout')
+    parser.add_argument("rest", nargs = argparse.REMAINDER)
     return parser
 
 
@@ -23,8 +24,9 @@ class CppMagic(ipym.Magics):
         super(CppMagic, self).__init__(shell)
         self.argparser = get_argparser()
         
-    def _compile(self, file_path):
-        subprocess.check_output(["g++", file_path + ".cpp", "-o", file_path + ".out"], stderr=subprocess.STDOUT)
+    def _compile(self, file_path, compilerOpts=None):
+        cmd = ["g++", file_path + ".cpp", "-o", file_path + ".out"] + compilerOpts[1:len(compilerOpts)]
+        subprocess.check_output(cmd, stderr=subprocess.STDOUT)
 
     def _run(self, file_path, timeit=False):
         if timeit:
@@ -48,7 +50,7 @@ class CppMagic(ipym.Magics):
             with open(file_path + ".cpp", "w") as f:
                 f.write(cell)
             try:
-                self._compile(file_path)
+                self._compile(file_path, compilerOpts = args.rest)
                 output = self._run(file_path, timeit=args.timeit)
             except subprocess.CalledProcessError as e:
                 print(e.output.decode("utf8"))

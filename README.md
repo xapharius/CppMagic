@@ -8,7 +8,8 @@ Usage
 --------
 Load extension using %load_ext cppmagic.    
 Use %%cpp at the beginning of the cell and write your C++ code. Execute to get results or compilation errors.   
-Use %%cpp -t to get a timeit result.
+Use %%cpp -t to get a timeit result.  
+Use %%cpp -- [-args...] to pass arguments to the C++ compiler. (For example, %%cpp -- -O3 -lpthread)
 
 <br><br>
 
@@ -91,7 +92,6 @@ TODO:
 --------
 - test on windows
 - test on python 2
-- add compiler flags
 - add timeit params
 
 
